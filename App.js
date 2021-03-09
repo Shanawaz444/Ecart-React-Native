@@ -10,7 +10,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 const App = ()=>{
   return (
    
-<ScrollView>
+<ScrollView backgroundColor="#FCF6F5FF">
       <View style={styles.navbar}>
 
 
@@ -73,9 +73,6 @@ const App = ()=>{
 
       </View>
     </ScrollView>
-    
-      
- 
     
    
 
