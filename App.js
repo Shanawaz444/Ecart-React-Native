@@ -330,6 +330,10 @@ cards1:{
       marginTop:20,
       marginBottom:10,
       backgroundColor:'#F49F1C',
+      borderTopLeftRadius: 5,
+      borderTopRightRadius: 5,
+      borderBottomLeftRadius: 5,
+      borderBottomRightRadius: 5,
       
       },
 top_part:{
