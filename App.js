@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text,ScrollView, View,StyleSheet,Image,ImageBackground } from 'react-native';
 import { Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/FontAwesome' ;
+
 
 
 
