@@ -154,7 +154,52 @@ return (
     </View>
 
 <View style={styles.bottom_part}>
-  <Text>adsasas</Text>
+  <View  style={styles.bottom_bar}>
+    <View style={styles.bottom_bar_Home}>
+    <Icon
+  raised
+  size={30}
+  name="home"
+  type="font-awesome" 
+  color="#F49F1C"
+  onPress={() => console.log('home button')}
+  />
+      
+    </View>
+    <View style={styles.bottom_bar_category}>
+    <Icon
+  raised
+  size={30}
+  name="qrcode"
+  type="font-awesome" 
+  color="#F49F1C"
+  onPress={() => console.log('category button')}
+  />
+
+    </View>
+    <View style={styles.bottom_bar_Fav}>
+    <Icon
+  raised
+  size={30}
+  name="heart"
+  type="font-awesome" 
+  color="#F49F1C"
+  onPress={() => console.log('fav button')}
+  />
+
+    </View>
+    <View style={styles.bottom_bar_Delevery}>
+    <Icon
+  raised
+  size={30}
+  name="truck"
+  type="font-awesome" 
+  color="#F49F1C"
+  onPress={() => console.log('delevery button')}
+  />
+
+    </View>
+  </View>
 </View>
 
 
@@ -165,6 +210,33 @@ return (
 };
 
 const styles=StyleSheet.create({
+  bottom_bar:{
+    padding:20,
+    flex:1,
+    flexDirection:'row',
+    justifyContent:'space-between'
+
+  } ,
+  bottom_bar_Home:{
+    marginLeft:10
+
+  },
+  bottom_bar_category:{
+    marginLeft:10
+
+  },
+  bottom_bar_Fav:{
+    marginLeft:10
+
+  },
+  bottom_bar_Delevery:{
+    marginLeft:10
+
+  },
+
+
+
+
   image: {
     resizeMode: 'cover',
     justifyContent: "center",
