@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text,ScrollView, View,StyleSheet,Image,ImageBackground } from 'react-native';
 import { Button } from 'react-native-elements';
+import { BackgroundImage } from 'react-native-elements/dist/config';
 import Icon from 'react-native-vector-icons/FontAwesome' ;
 
 
@@ -81,6 +82,10 @@ return (
 
 
 <ScrollView style={styles.container}>  
+<Text style={styles.Trending_Lable}>
+  Category
+  </Text>
+
 <View style={styles.inner_main_cnt} backgroundColor="#E5E5E5">
 <View style={styles.card_content}>
 <View style={styles.cards3}>
@@ -135,6 +140,32 @@ return (
  </View>
  <Text style={styles.card_text}>Cakes</Text>
 </View>
+
+
+
+</View>
+<Text style={styles.Trending_Lable}>
+  Trending
+  </Text>
+<View style={styles.Trending}>
+  <BackgroundImage source={require("./images/ade1.jpg")} style={styles.tren1}>
+  
+  </BackgroundImage>
+
+</View>
+<View style={styles.Trending}>
+
+<BackgroundImage source={require("./images/ade2.jpg")} style={styles.tren1}>
+  
+  </BackgroundImage>
+
+
+
+</View>
+<View style={styles.Trending}>
+<BackgroundImage source={require("./images/ade3.jpg")} style={styles.tren1}>
+  
+  </BackgroundImage>
 
 
 
@@ -210,6 +241,34 @@ return (
 };
 
 const styles=StyleSheet.create({
+
+
+  tren1:{
+    flex:1,
+  },
+ 
+  Trending_Lable:{
+
+    fontSize:30,
+    marginLeft:10,
+    marginTop:10,
+    color:'#00154F',
+    
+    fontFamily:'sans-serif-medium'
+
+  },
+
+  Trending:{
+
+    flex:1,
+    height:150,
+    backgroundColor:'red',
+    marginLeft:10,
+    marginRight:10,
+    marginBottom:10,
+  },
+  
+
   bottom_bar:{
     padding:20,
     flex:1,
@@ -327,7 +386,7 @@ cards1:{
       width:122,
      
       marginLeft:7,
-      marginTop:20,
+      marginTop:10,
       marginBottom:10,
       backgroundColor:'#F49F1C',
       borderTopLeftRadius: 5,
