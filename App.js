@@ -1,20 +1,22 @@
-import React from 'react';
-import { Text,ScrollView, View,StyleSheet,Image,ImageBackground } from 'react-native';
-import { Button } from 'react-native-elements';
+import React,{ useState } from 'react';
+
+import { Text,ScrollView, Button,View,StyleSheet,Image,ImageBackground } from 'react-native';
 import { BackgroundImage } from 'react-native-elements/dist/config';
 import Icon from 'react-native-vector-icons/FontAwesome' ;
+import side_Drawer from './lib/catagory/side_drawer';
 
 
 
-
+const side_Drawer_fun=side_Drawer();
 const image = { uri: "./images/pacifier.png" };
-const App = ()=>{
-return (
-  
 
-    
-    
+const App = ()=>{
+  const [state,setState]=useState(false)
+  var pre=false;
+return (
+
 <View style={styles.main_page} backgroundColor="#E5E5E5">
+{state && side_Drawer_fun}
 <View style={styles.top_part}>
 <View style={styles.navbar}>  
 
@@ -23,11 +25,11 @@ return (
 <View style={styles.sideDrawer_container}>
 <Icon
  raised
- size={30}
+ size={25}
  name='navicon'
  type='font-awesome'
   color='#F49F1C'
-  onPress={() => console.log('hello')} />
+  onPress={() => {setState(!state)}} />
 </View>
 
 
@@ -54,17 +56,17 @@ return (
 <View style={styles.nav_bar_search}>
   <Icon
   raised
-  size={30}
+  size={20}
   name="search"
   type="font-awesome" 
   color="#00154F"
-  onPress={() => console.log('search button')}
+  onPress={() => {setState(!state)}}
   />
 </View>
 <View style={styles.nav_bar_cart}>
   <Icon
   raised
-  size={30}
+  size={20}
   name="shopping-basket"
   type="font-awesome" 
   color="#00154F"
@@ -187,14 +189,17 @@ return (
 <View style={styles.bottom_part}>
   <View  style={styles.bottom_bar}>
     <View style={styles.bottom_bar_Home}>
-    <Icon
-  raised
-  size={30}
-  name="home"
-  type="font-awesome" 
-  color="#F49F1C"
-  onPress={() => console.log('home button')}
-  />
+ 
+        <Icon
+        raised
+        size={30}
+        name="home"
+        type="font-awesome" 
+        color="#F49F1C"
+        onPress={() => console.log('home button')}
+        />
+
+    
       
     </View>
     <View style={styles.bottom_bar_category}>
@@ -275,7 +280,7 @@ const styles=StyleSheet.create({
     flexDirection:'row',
     justifyContent:'space-between'
 
-  } ,
+  },
   bottom_bar_Home:{
     marginLeft:10
 
