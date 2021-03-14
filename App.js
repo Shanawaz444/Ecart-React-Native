@@ -3,7 +3,8 @@ import {useState} from 'react';
 import { Text,ScrollView, Button,View,StyleSheet,Image,ImageBackground } from 'react-native';
 import { BackgroundImage } from 'react-native-elements/dist/config';
 import Icon from 'react-native-vector-icons/FontAwesome' ;
-import side_Drawer from './lib/catagory/side_drawer';
+import side_drawer_middle_components from './lib/catagory/main_side_drawer_components/side_drawer_components'
+
 
 
 
@@ -12,18 +13,59 @@ import side_Drawer from './lib/catagory/side_drawer';
 const image = { uri: "./images/pacifier.png" };
 
 const App = ()=>{
-  const side_Drawer1 =side_Drawer();
-  const [state,setState]=useState(false)
+
+  const side_drawer_middle_components1 = side_drawer_middle_components();
+  const [state,setState]=useState(true)
   var pre=false;
 return (
 
 <View style={styles.main_page} backgroundColor="#E5E5E5">
   
 <View style={styles.top_part}>
+{state && 
+
+<View style={styles.side_drawer_style}>
+
+
+  <View style={styles.side_drawer_nav}>
+
+    <View style={styles.side_drawer_nav_back_icon}>
+    <Icon
+     raised
+      size={30}
+       name='arrow-left'
+        type='font-awesome'
+         color='#F49F1C'
+           onPress={() => {setState(!state)}} 
+            />
+
+           
+    </View>
+    <View>
+    <Text style={styles.side_drawer_nav_welcome}>
+              Welcome
+            </Text>
+    <Text style={styles.side_drawer_nav_userName}>
+              USER
+            </Text>
+      </View>
+    
+     
+  </View>
+  {side_drawer_middle_components1}
+     
+
+
+  </View>
+}
+
+
 <View style={styles.navbar}>  
 
 
-<View style={styles.navbar_first_half}  >
+
+<View style={styles.navbar_first_half}>
+  
 <View style={styles.sideDrawer_container}>
 <Icon
  raised
@@ -444,8 +486,42 @@ card_text:{
   textAlign:'center',
   fontSize:15,
   fontWeight:'bold',
-}
+},
+side_drawer_style:{
 
+ 
+  width:230,
+  backgroundColor:"#00154F",
+  position:"absolute",
+  zIndex:1,
+  
+
+},
+side_drawer_nav_back_icon:{
+  
+},
+side_drawer_nav_welcome:{
+  marginLeft:20, 
+  fontSize:20,
+  fontWeight:'bold',
+  fontFamily:'sans-serif',
+  color:'#F49F1C'
+},
+side_drawer_nav_userName:{
+  marginLeft:20,
+  
+  fontSize:20,
+  fontWeight:'bold',
+  fontFamily:'sans-serif',
+  color:'#F49F1C'
+},
+
+side_drawer_nav:{
+  flex:1,
+  flexDirection:"row",
+  marginTop:20,
+  marginLeft:10
+}
 
 })
 export default App;
