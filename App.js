@@ -494,7 +494,6 @@ side_drawer_style:{
   backgroundColor:"#00154F",
   position:"absolute",
   zIndex:1,
-  
 
 },
 side_drawer_nav_back_icon:{
