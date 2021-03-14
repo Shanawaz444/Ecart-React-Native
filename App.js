@@ -1,5 +1,5 @@
-import React,{ useState } from 'react';
-
+import React from 'react';
+import {useState} from 'react';
 import { Text,ScrollView, Button,View,StyleSheet,Image,ImageBackground } from 'react-native';
 import { BackgroundImage } from 'react-native-elements/dist/config';
 import Icon from 'react-native-vector-icons/FontAwesome' ;
@@ -7,16 +7,18 @@ import side_Drawer from './lib/catagory/side_drawer';
 
 
 
-const side_Drawer_fun=side_Drawer();
+
+
 const image = { uri: "./images/pacifier.png" };
 
 const App = ()=>{
+  const side_Drawer1 =side_Drawer();
   const [state,setState]=useState(false)
   var pre=false;
 return (
 
 <View style={styles.main_page} backgroundColor="#E5E5E5">
-{state && side_Drawer_fun}
+  
 <View style={styles.top_part}>
 <View style={styles.navbar}>  
 
@@ -29,7 +31,8 @@ return (
  name='navicon'
  type='font-awesome'
   color='#F49F1C'
-  onPress={() => {setState(!state)}} />
+  onPress={() => {setState(!state)}} 
+  />
 </View>
 
 
@@ -237,6 +240,7 @@ return (
     </View>
   </View>
 </View>
+
 
 
 </View>
